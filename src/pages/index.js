@@ -14,7 +14,7 @@ import ProfileW from "../images/Profile_W.png"
 import ProfileB from "../images/Profile_B.png"
 
 
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+if ((typeof window !== 'undefined' && window.localStorage.theme) === 'dark' || (!('theme' in (typeof window !== 'undefined' && window.localStorage)) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark')
 } else {
   document.documentElement.classList.remove('dark')
